@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <h1>
+      Bienvenue !
+    </h1>
+    <h4>
+      Identifiez-vous...
+    </h4>
+
+    <form [formGroup]="form">
+      <ion-item>
+        <ion-icon name="person"></ion-icon>
+        <ion-input placeholder="Identifiant" formControlName="username"></ion-input>
+      </ion-item><br>
+
+      <ion-item>
+        <ion-icon name="lock"></ion-icon>
+        <ion-input type="password" placeholder="Mot de passe" formControlName="password"></ion-input>
+      </ion-item>
+
+      <span>PS: 4 caractères minimum sont requis pour les champs</span> <br><br>
+      <ion-button [disabled]="form.invalid" expand="block" (click)="login()">Login</ion-button>
+    </form>
+  </div>
+</ion-content>

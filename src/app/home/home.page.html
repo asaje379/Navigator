@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Navigator
+      <span style="float: right;" (click)="logout()">
+        <ion-icon name="power"></ion-icon>
+      </span>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Entrer l'URL : </ion-label>
+    <ion-input [(ngModel)]="url"></ion-input>
+    <ion-button (click)="load()">
+      <ion-icon name="search"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(cus_src)" frameborder="0"></iframe>
+</ion-content>
